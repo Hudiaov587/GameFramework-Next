@@ -72,6 +72,10 @@ namespace GameLogic
         /// </summary>
         protected virtual void ScriptGenerator()
         {
+            if (gameObject.TryGetComponent<UIFieldBinder>(out var binder))
+            {
+                binder.ExportFields(this);
+            }
         }
 
         /// <summary>
