@@ -37,7 +37,7 @@ namespace GameLogic
                     }
                 }
 
-                if (obj.GetComponent<UIFieldBinder>())
+                if (obj.TryGetComponent<UIFieldBinder>(out var _))
                 {
                     return;
                 }
