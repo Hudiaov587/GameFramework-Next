@@ -31,11 +31,6 @@ namespace GameLogic
         /// </summary>
         public Canvas UICanvas { private set; get; }
 
-        /// <summary>
-        /// UI根节点。
-        /// </summary>
-        public Camera UICamera { private set; get; }
-
         private ErrorLogger _errorLogger;
         
         public override bool OnInit()
@@ -47,8 +42,6 @@ namespace GameLogic
             UICanvasTransform = GameObject.Find("UIRoot/UICanvas").transform;
 
             UICanvas = UICanvasTransform.GetComponent<Canvas>();
-
-            UICamera = GameObject.Find("UIRoot/UICamera").GetComponent<Camera>();
 
             UICanvasTransform.gameObject.layer = LayerMask.NameToLayer("UI");
 
