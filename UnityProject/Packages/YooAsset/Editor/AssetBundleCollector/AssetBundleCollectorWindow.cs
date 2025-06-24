@@ -390,6 +390,10 @@ namespace YooAsset.Editor
 
         private void RefreshWindow()
         {
+            if (_groupContainer == null) {
+                return;
+            }
+
             _groupContainer.visible = false;
             _collectorContainer.visible = false;
 
