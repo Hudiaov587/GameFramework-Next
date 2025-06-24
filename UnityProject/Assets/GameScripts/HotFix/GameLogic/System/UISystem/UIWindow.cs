@@ -157,7 +157,7 @@ namespace GameLogic
             {
                 if (_canvas != null)
                 {
-                    return _canvas.gameObject.layer == UISystem.WINDOW_SHOW_LAYER;
+                    return _canvas.enabled;
                 }
                 else
                 {
@@ -169,17 +169,12 @@ namespace GameLogic
             {
                 if (_canvas != null)
                 {
-                    int setLayer = value ? UISystem.WINDOW_SHOW_LAYER : UISystem.WINDOW_HIDE_LAYER;
-                    if (_canvas.gameObject.layer == setLayer)
+                    if (_canvas.enabled == value)
                         return;
 
                     // 显示设置
-                    _canvas.gameObject.layer = setLayer;
-                    for (int i = 0; i < _childCanvas.Length; i++)
-                    {
-                        _childCanvas[i].gameObject.layer = setLayer;
-                    }
-
+                    _canvas.enabled = value;
+                    
                     // 交互设置
                     Interactable = value;
 
